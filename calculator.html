@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <body>
+       <h1>Calculator</h1>
+
+    <p id="answer"></p>
+        <input type="number" id="answer"><br> </readonly>
+
+    </div>
+
+
+    <div class="grid-container">
+        <!-- row 1-->
+         <input type="button" class="button" value="C"></td>
+
+         <!-- row 2--><br>
+         <input type="button" class="button" value="7"></td>
+         <input type="button" class="button" value="8"></td>
+         <input type="button" class="button" value="9"></td>
+         <input type="button" class="button" value="*"></td>
+
+        <!-- row 3--><br>
+         <button onclick="Calculator()">4</button>
+         <button onclick="Calculator()">5</button>
+         <button onclick="Calculator()">6</button>
+         <button onclick="Calculator()">-</button>
+
+         <!-- row 4--><br>
+          <button onclick="Calculator()">1</button>
+          <button onclick="Calculator()">2</button>
+          <button onclick="Calculator()">3</button>
+          <button onclick="Calculator()">/</button>
+
+
+    </div>
+
+    <button onclick="Calculator()">8</button>
+
+    <button onclick="Calculator()">=</button>
+    
+
+
+    <script>
+function Calculator(){
+    let int1 = document.getElementById("msg1").value ;
+    let int2 = document.getElementById("msg2").value ;
+    let operator = document.getElementById("op").value ;
+
+    console.log(calculator(int1,int2,operator)) ;
+
+    
+
+
+    function calculator(num1,num2,operator){
+
+if (operator == "+"){
+
+    document.getElementById("answer").innerHTML =Number(int1)+Number(int2)
+    console.log(Number(num1) + Number(num2))
+} else if (operator == "-"){
+
+    document.getElementById("answer").innerHTML =Number(int1)-Number(int2)
+    console.log(num1 - num2)
+} else if (operator == "*"){
+
+    document.getElementById("answer").innerHTML =Number(int1)*Number(int2)
+    console.log(Number(num1) * Number(num2))
+} else if (operator == "/"){
+
+    document.getElementById("answer").innerHTML =Number(int1)/Number(int2)
+    console.log(num1 / num2)
+}
+    }
+
+
+
+}
+
+
+    </script>
+    </body>
+</head>
+</html>
