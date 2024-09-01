@@ -1,44 +1,59 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <body>
-       <h1>Calculator</h1>
-
-    <p id="answer"></p>
-        <input type="number" id="answer"><br> </readonly>
-
+<head>
+    <p>Calculator</p>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+    <input type="text" id="result">
+    <div>
+        <button onclick="append('1')">1</button>
+        <button onclick="append('2')">2</button>
+        <button onclick="append('3')">3</button>
+        <button onclick="append('+')">+</button>
     </div>
-
-
-    <div class="grid-container">
-        <!-- row 1-->
-         <input type="button" class="button" value="C"></td>
-
-         <!-- row 2--><br>
-         <input type="button" class="button" value="7"></td>
-         <input type="button" class="button" value="8"></td>
-         <input type="button" class="button" value="9"></td>
-         <input type="button" class="button" value="*"></td>
-
-        <!-- row 3--><br>
-         <button onclick="Calculator()">4</button>
-         <button onclick="Calculator()">5</button>
-         <button onclick="Calculator()">6</button>
-         <button onclick="Calculator()">-</button>
-
-         <!-- row 4--><br>
-          <button onclick="Calculator()">1</button>
-          <button onclick="Calculator()">2</button>
-          <button onclick="Calculator()">3</button>
-          <button onclick="Calculator()">/</button>
-
-
+    <div>
+        <button onclick="append('4')">4</button>
+        <button onclick="append('5')">5</button>
+        <button onclick="append('6')">6</button>
+        <button onclick="append('-')">-</button>
     </div>
+    <div>
+        <button onclick="append('7')">7</button>
+        <button onclick="append('8')">8</button>
+        <button onclick="append('9')">9</button>
+        <button onclick="append('*')">x</button>
+    </div>
+    <div>
+        <button onclick="append('0')">0</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="cleara()">CE</button>
+        <button onclick="append('/')">/</button>
+    </div>
+</main>
+<script>
+const result = document.getElementById('result');
+function append(value){
+    result.value += value;
+}
 
-    <button onclick="Calculator()">8</button>
+function calculate() {
+    try {
+        result.value = eval(result.value);
+    } catch(error) {
+        result.value = "Error";
+    }
+}
 
-    <button onclick="Calculator()">=</button>
-    
+function cleara(){
+    result.value = "";
+}
+</script>
+</body>
+</html>
+
+</script>
 
 
     <script>
@@ -48,8 +63,6 @@ function Calculator(){
     let operator = document.getElementById("op").value ;
 
     console.log(calculator(int1,int2,operator)) ;
-
-    
 
 
     function calculator(num1,num2,operator){
