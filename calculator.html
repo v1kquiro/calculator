@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <p>Calculator</p>
+    <title>Calculator</title>
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<main>
-    <input type="text" id="result">
-    <div>
-        <button onclick="append('1')">1</button>
-        <button onclick="append('2')">2</button>
-        <button onclick="append('3')">3</button>
-        <button onclick="append('+')">+</button>
-    </div>
-    <div>
-        <button onclick="append('4')">4</button>
-        <button onclick="append('5')">5</button>
-        <button onclick="append('6')">6</button>
-        <button onclick="append('-')">-</button>
-    </div>
-    <div>
-        <button onclick="append('7')">7</button>
-        <button onclick="append('8')">8</button>
-        <button onclick="append('9')">9</button>
-        <button onclick="append('*')">x</button>
-    </div>
-    <div>
-        <button onclick="append('0')">0</button>
-        <button onclick="calculate()">=</button>
-        <button onclick="cleara()">CE</button>
-        <button onclick="append('/')">/</button>
-    </div>
-</main>
+    <body>
+        <!-- Block with glow effect -->
+        <div class="block glow"></div>
+        <div class="new-block"></div>
+    
+        <!-- Calculator positioned on top of the block -->
+        <div class="calculator">
+            <input type="text" id="result" readonly><br>
+            <div class="buttons">
+                <button class="button" onclick="append('1')">1</button>
+                <button class="button" onclick="append('2')">2</button>
+                <button class="button" onclick="append('3')">3</button>
+                <button class="button" onclick="append('+')">+</button>
+                
+                <button class="button" onclick="append('4')">4</button>
+                <button class="button" onclick="append('5')">5</button>
+                <button class="button" onclick="append('6')">6</button>
+                <button class="button" onclick="append('-')">-</button>
+                
+                <button class="button" onclick="append('7')">7</button>
+                <button class="button" onclick="append('8')">8</button>
+                <button class="button" onclick="append('9')">9</button>
+                <button class="button" onclick="append('*')">x</button>
+                
+                <button class="button" onclick="append('0')">0</button>
+                <button class="button" onclick="calculate()">=</button>
+                <button class="button" onclick="cleara()">CE</button>
+                <button class="button" onclick="append('/')">/</button>
+            </div>
+        </div>
 <script>
-const result = document.getElementById('result');
+    const result = document.getElementById('result');
 function append(value){
     result.value += value;
 }
@@ -49,14 +50,6 @@ function calculate() {
 function cleara(){
     result.value = "";
 }
-</script>
-</body>
-</html>
-
-</script>
-
-
-    <script>
 function Calculator(){
     let int1 = document.getElementById("msg1").value ;
     let int2 = document.getElementById("msg2").value ;

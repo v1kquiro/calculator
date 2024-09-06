@@ -1,0 +1,110 @@
+body{
+margin: 0;
+padding: 0;
+background-color: black;
+display: flex;
+justify-content: center;
+height: 80vh;
+position: relative;
+}
+
+.button{
+    border-radius: 50%;
+    width: 80px;
+    height: 70px;
+    background-color: beige;
+ }
+
+
+.block{
+    position: relative;
+    margin: 10% auto 0;
+    align-items: center;
+    width: 50%;
+    height: 400px;
+    background: linear-gradient(0deg, black, rgb(44,43,43));
+
+}
+
+.glow::before , .glow::after{
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #e6fb04, #ff6600, #00ff66, #00ffff,
+    #ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff);
+    background-size: 400%;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    z-index: -1;
+    animation: animate 20s linear infinite;
+
+}
+
+@keyframes animate{
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+}
+
+.glow::after{
+    filter: blur(40px);
+    opacity: 0.99;
+}
+
+.calculator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+}
+
+input {
+    width: 220px; /* Smaller input box */
+    height: 50px; /* Smaller height */
+    margin-bottom: 10px;
+    font-size: 16px; /* Smaller font */
+    text-align: right;
+    border-radius: 5px;
+    padding: 5px;
+    z-index: 10;
+    border: none;
+}
+
+.new-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 240px; /* Smaller width */
+    height: 320px; /* Smaller height */
+    background: linear-gradient(0deg, black, rgb(44, 43, 43));
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px; /* Reduced spacing between buttons */
+    justify-items: center;
+}
+
+.button {
+    border-radius: 50%;
+    width: 55px; /* Smaller buttons */
+    height: 55px; /* Smaller buttons */
+    background-color: beige;
+    font-size: 18px; /* Slightly smaller text */
+    border: none;
+    cursor: pointer;
+}
+
